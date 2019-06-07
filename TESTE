@@ -17,9 +17,9 @@ fstream filearq;
 	cin >> texto;
 
 // abrindo o arquivo
-	filearq.open(arq, fstream::in);
+	filearq.open(arq, fstream::in | fstream::out | fstream::app);
 
-	filearq << texto;
+	filearq << " " << texto;
 
 	filearq.close();
 
