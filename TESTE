@@ -1,0 +1,27 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+// variaveis
+string arq;
+string texto;
+fstream filearq;
+
+// lendo o nome do arquivo
+	cin >> arq;
+
+	cout << "Entre com o que deseja escrever: \n";
+	cin >> texto;
+
+// abrindo o arquivo
+	filearq.open(arq, fstream::in);
+
+	filearq << texto;
+
+	filearq.close();
+
+	return 0;
+}
