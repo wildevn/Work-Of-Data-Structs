@@ -5,23 +5,36 @@ using namespace std;
 
 int main()
 {
-// variaveis
-string arq;
-string texto;
-fstream filearq;
+  // variaveis 
+  int a;
+  string nome_arq;
+  string texto;
+  ifstream filearq;
+  
+  //ofstream file_out("arquivo_saida", ofstream::app);
+  //filearq >> nome_arq;
+  //file_out <<  nome_arq;
 
-// lendo o nome do arquivo
-	cin >> arq;
+ // a = filearq.is_open();
+  //cout << a;
+  // lendo o nome do arquivo a ser aberto ou criado
+  //cout << "Entre com o nome do arquivo a ser aberto ou criado: \n";
+  //cin >> nome_arq;
+  //cout << nome_arq << "\n";
 
-	cout << "Entre com o que deseja escrever: \n";
-	cin >> texto;
+  // abrindo ou criando o arquivo
+  filearq.open("gui.txt"); // abre, e caso não exista, cria o arquivo
+  
 
-// abrindo o arquivo
-	filearq.open(arq, fstream::in | fstream::out | fstream::app);
+  // Lendo o texto
+  //cout << "Entre com o texto a ser escrito:\n";
+  //cin >> texto;
+  //cout << texto << "\n";
 
-	filearq << " " << texto;
+  // colocando o texto dentro do arquivo
+  //filearq << texto << ".\n";
 
-	filearq.close();
+  filearq.close();
 
-	return 0;
+  return 0;
 }
