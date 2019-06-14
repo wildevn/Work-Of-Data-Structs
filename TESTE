@@ -11,6 +11,7 @@ int main()
   string nome_arq;  // nome do arquivo de entrada
   ifstream filearq; // arquivo de entrada
   fstream file_test;  // testador de arquivos
+  ifstream word_arq;
   int n;              // numero recebido pelo arq_in
   int aux_files = -1; 
 
@@ -42,8 +43,18 @@ int main()
   // de arquivos, e reconhecer se estão funcionando ou não, caso não estejam não 
   // armazenará o determinado arquivo
 
+// Recebendo o arquivo contendo as palavras
+  getline(filearq, text_lines);
+  word_arq.open(text_lines);
+  if(word_arq.is_open() == 0)
+    cout << "Não foi possível encontrar o arquivo contendo os padrões a serem buscados\n";
 
-
+  while(!word_arq.eof())
+  {
+    getline(word_arq, text_lines);
+    if(!word_arq.eof())
+      cout << text_lines << endl;
+  }
  // cout << aux_files << endl;
  // for (int i = 0; i <= aux_files; i++)
  //   cout << text_files[i] << endl;
