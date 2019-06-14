@@ -1,4 +1,6 @@
 #include <iostream>
+    
+#include <iostream>
 #include <fstream>
 
 using namespace std;
@@ -6,33 +8,20 @@ using namespace std;
 int main()
 {
   // variaveis 
-  int a;
+  string a;
   string nome_arq;
-  string texto;
   ifstream filearq;
   
-  //ofstream file_out("arquivo_saida", ofstream::app);
-  //filearq >> nome_arq;
-  //file_out <<  nome_arq;
+  cout << "Entre com o nome do arquivo: \n";
+  cin >> nome_arq;
+  filearq.open(nome_arq);
 
- // a = filearq.is_open();
-  //cout << a;
-  // lendo o nome do arquivo a ser aberto ou criado
-  //cout << "Entre com o nome do arquivo a ser aberto ou criado: \n";
-  //cin >> nome_arq;
-  //cout << nome_arq << "\n";
+  getline(filearq, a);
+  cout << a;
+  for (int i = 0; i < b; i++)
+    cout << "Legal";
 
-  // abrindo ou criando o arquivo
-  filearq.open("gui.txt"); // abre, e caso não exista, cria o arquivo
-  
 
-  // Lendo o texto
-  //cout << "Entre com o texto a ser escrito:\n";
-  //cin >> texto;
-  //cout << texto << "\n";
-
-  // colocando o texto dentro do arquivo
-  //filearq << texto << ".\n";
 
   filearq.close();
 
