@@ -3,6 +3,11 @@
 #include <fstream>
 
 using namespace std;
+    
+#include <iostream>
+#include <fstream>
+
+using namespace std;
 
 int main()
 {
@@ -22,17 +27,18 @@ int main()
 // pegando a primeira linha do arquivo contendo o numero de arquivos que entrarâo
   getline(filearq, text_lines);
   n = a[0]- '0'; // convertendo o caractere recebido para um inteiro
-  fstream text_files[n]; // lista de strings contendo o nome de cada arquivo que será armazenado
+  string text_files[n]; // lista de strings contendo o nome de cada arquivo que será armazenado
 
   // rodando n vezes recebendo os arquivos de texto
   for (int i = 0; i < n; i++)
-    getline(filearq, text_lines);
-    file_test.open(text_lines);
-    if(file_test.is_open() == 1)
+    getline(filearq, text_lines); //pegando o nome do arquivo daquela linha
+    file_test.open(text_lines); //abrindo o arquivo
+    if(file_test.is_open() == 1)  // caso esteja aberto, significa que não foi criado
     {
-      aux = aux + 1;
-      
+      aux = aux + 1; //incrementando a quantidade de arquivos que podem ser aberto
+      text_files[aux] << text_line; // armazenando o nome do arquivo
     }
+    file_test.close(); //fechando o arquivo independente se foi criado ou aberto
     
    
   filearq.close();
