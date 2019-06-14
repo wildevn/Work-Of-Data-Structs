@@ -9,6 +9,7 @@ int main()
   // variaveis 
   string text_lines; // pegar linhas de texto
   string nome_arq;  // nome do arquivo de entrada
+  string word;
   ifstream filearq; // arquivo de entrada
   fstream file_test;  // testador de arquivos
   ifstream word_arq;
@@ -49,15 +50,18 @@ int main()
   if(word_arq.is_open() == 0)
     cout << "Não foi possível encontrar o arquivo contendo os padrões a serem buscados\n";
 
+// Enquanto não for o fim do arquivo ainda terá palavras a serem buscadas
   while(!word_arq.eof())
   {
-    getline(word_arq, text_lines);
-    if(!word_arq.eof())
-      cout << text_lines << endl;
+    getline(word_arq, word); //pegando a palavra a ser buscada
+    if(!word_arq.eof()) // caso seja diferente do final do arquivo, continue
+      for (int i = 0; i <= n; i++)  // procurando em todos os arquivos
+      {
+        
+      }
+  
   }
- // cout << aux_files << endl;
- // for (int i = 0; i <= aux_files; i++)
- //   cout << text_files[i] << endl;
+
    
   filearq.close();
 
