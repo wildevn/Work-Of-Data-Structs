@@ -7,22 +7,35 @@ using namespace std;
 int main()
 {
   // variaveis 
-  string a;
+  string text_line;
   string nome_arq;
   ifstream filearq;
-  
+  fstream file_test;
+  int n;
+  int aux_files = -1;
+
+// lendo o arquivo de entrada e abrindo
   cout << "Entre com o nome do arquivo: \n";
   cin >> nome_arq;
   filearq.open(nome_arq);
 
-  getline(filearq, a);
-  int b = a[0]- '0';
+// pegando a primeira linha do arquivo contendo o numero de arquivos que entrarâo
+  getline(filearq, text_lines);
+  n = a[0]- '0'; // convertendo o caractere recebido para um inteiro
+  fstream text_files[n]; // lista de strings contendo o nome de cada arquivo que será armazenado
 
-  for (int i = 0; i < b; i++)
-    cout << "Legal "<< endl;
-
-
-
+  // rodando n vezes recebendo os arquivos de texto
+  for (int i = 0; i < n; i++)
+    getline(filearq, text_lines);
+    file_test.open(text_lines);
+    if(file_test.is_open() == 1)
+    {
+      aux = aux + 1;
+      
+    }
+    
+   
   filearq.close();
 
   return 0;
+}
