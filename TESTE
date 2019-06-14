@@ -3,21 +3,16 @@
 #include <fstream>
 
 using namespace std;
-    
-#include <iostream>
-#include <fstream>
-
-using namespace std;
 
 int main()
 {
   // variaveis 
-  string text_line;
-  string nome_arq;
-  ifstream filearq;
-  fstream file_test;
-  int n;
-  int aux_files = -1;
+  string text_lines; // pegar linhas de texto
+  string nome_arq;  // nome do arquivo de entrada
+  ifstream filearq; // arquivo de entrada
+  fstream file_test;  // testador de arquivos
+  int n;              // numero recebido pelo arq_in
+  int aux_files = -1; 
 
 // lendo o arquivo de entrada e abrindo
   cout << "Entre com o nome do arquivo: \n";
@@ -26,20 +21,22 @@ int main()
 
 // pegando a primeira linha do arquivo contendo o numero de arquivos que entrarâo
   getline(filearq, text_lines);
-  n = a[0]- '0'; // convertendo o caractere recebido para um inteiro
+  n = text_lines[0]- '0'; // convertendo o caractere recebido para um inteiro
   string text_files[n]; // lista de strings contendo o nome de cada arquivo que será armazenado
 
   // rodando n vezes recebendo os arquivos de texto
   for (int i = 0; i < n; i++)
+  {
     getline(filearq, text_lines); //pegando o nome do arquivo daquela linha
     file_test.open(text_lines); //abrindo o arquivo
     if(file_test.is_open() == 1)  // caso esteja aberto, significa que não foi criado
     {
-      aux = aux + 1; //incrementando a quantidade de arquivos que podem ser aberto
-      text_files[aux] << text_line; // armazenando o nome do arquivo
+      aux_files = aux_files + 1; //incrementando a quantidade de arquivos que podem ser aberto
+      text_files[aux_files] = text_lines; // armazenando o nome do arquivo
     }
     file_test.close(); //fechando o arquivo independente se foi criado ou aberto
-    
+  } // fim for
+  cout << aux_files << endl;
    
   filearq.close();
 
